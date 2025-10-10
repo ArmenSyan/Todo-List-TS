@@ -2,7 +2,8 @@
 function App() {
 
   return (
-    <div className="">
+    <div className="flex flex-col justify-evenly items-center">
+      
 
     </div>
   )
