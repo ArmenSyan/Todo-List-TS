@@ -9,9 +9,11 @@ interface ContextType {
     data: DataType[];
     setData: (value: DataType[]) => void;
     activeModal: boolean;
-    setActiveModal: (value: boolean) => void
+    setActiveModal: (value: boolean) => void;
     addInputValue : string;
-    setAddInputValue : (value : string) => void
+    setAddInputValue : (value : string) => void;
+    checkedNotes: number[];
+    setCheckedNotes: (value: number[]) => void;
 }
 
 export const FilterContext = createContext<ContextType | undefined>(undefined);
@@ -21,6 +23,8 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     const [addInputValue, setAddInputValue] = useState<string>('')
     const [activeModal, setActiveModal] = useState<boolean>(false);
+
+    const [checkedNotes, setCheckedNotes] = useState<number[]>([])
     return (
         <FilterContext.Provider value={{
             data, setData,
@@ -28,6 +32,7 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             addInputValue, setAddInputValue,
             activeModal, setActiveModal,
 
+            checkedNotes, setCheckedNotes,
         }} >
             {children}
         </FilterContext.Provider>
