@@ -4,7 +4,7 @@ import CheckedBtn from "../Buttons/CheckedBtn";
 import DeleteBtn from "../Buttons/DeleteBtn";
 import RenameBtn from "../Buttons/RenameBtn";
 function Todos() {
-  const { data, setData } = useFilter()
+  const { data } = useFilter()
   return (
     <div className="w-[520px]">
 
@@ -14,7 +14,7 @@ function Todos() {
           key={i}
           className="w-full py-[17px] flex justify-between items-center">
           <div className="flex justify-evenly items-center gap-[17px]">
-            <CheckedBtn />
+            <CheckedBtn i={i}/>
             <p className="font-medium text-[20px] text-black"> {el.name} </p>
           </div>
           <div className="flex justify-evenly items-center gap-[10px]">
