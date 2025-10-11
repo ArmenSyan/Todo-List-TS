@@ -12,7 +12,8 @@ function NoteModal() {
         
         setData([...data,
             {
-                name: `${addInputValue}`,
+                id : Date.now(),
+                name: addInputValue,
                 checked: false
             }
         ])

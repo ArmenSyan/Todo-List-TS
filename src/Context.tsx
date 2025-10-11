@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 
 export interface DataType {
+    id : number ;
     name: string;
     checked: boolean;
 

@@ -19,7 +19,7 @@ function Todos() {
           </div>
           <div className="flex justify-evenly items-center gap-[10px]">
             <RenameBtn />
-            <DeleteBtn />
+            <DeleteBtn id={el.id}/>
           </div>
          
         
