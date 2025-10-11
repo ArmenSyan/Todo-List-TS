@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
+
+
 function Dropdown() {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen]= useState<boolean>(false)
 
     function button() {
         if (open) setOpen(false)
