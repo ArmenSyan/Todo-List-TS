@@ -1,7 +1,7 @@
 import { DataType } from "../../Context"
 import { useFilter } from "../../CustomHook"
-import { LuTrash2 } from "react-icons/lu";
 import CheckedBtn from "../Buttons/CheckedBtn";
+import DeleteBtn from "../Buttons/DeleteBtn";
 import RenameBtn from "../Buttons/RenameBtn";
 function Todos() {
   const { data, setData } = useFilter()
@@ -19,7 +19,7 @@ function Todos() {
           </div>
           <div className="flex justify-evenly items-center gap-[10px]">
             <RenameBtn />
-
+            <DeleteBtn />
           </div>
          
         
