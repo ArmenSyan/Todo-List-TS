@@ -1,7 +1,7 @@
 import { IoSearchOutline } from "react-icons/io5";
 function Search() {
   return (
-    <div className="w-[600px] flex justify-items-center">
+    <div className="flex justify-items-center">
         <input 
         type="text" 
         placeholder="Search note..." 

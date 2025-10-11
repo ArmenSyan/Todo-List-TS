@@ -1,5 +1,6 @@
 import Dropdown from "./DropDown/Dropdown"
 import Search from "./Search/Search"
+import Shift from "./Shift/Shift"
 
 function Header() {
   return (
@@ -8,6 +9,7 @@ function Header() {
         <div className="flex justify-evenly items-center gap-x-2 mt-[16px]">
             <Search />
             <Dropdown />
+            <Shift />
         </div>
     </div>
   )
