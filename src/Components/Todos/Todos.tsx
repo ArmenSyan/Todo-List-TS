@@ -1,8 +1,8 @@
 import { DataType } from "../../Context"
 import { useFilter } from "../../CustomHook"
-import { PiPencilSimple } from "react-icons/pi";
 import { LuTrash2 } from "react-icons/lu";
 import CheckedBtn from "../Buttons/CheckedBtn";
+import RenameBtn from "../Buttons/RenameBtn";
 function Todos() {
   const { data, setData } = useFilter()
   return (
@@ -17,7 +17,10 @@ function Todos() {
             <CheckedBtn />
             <p className="font-medium text-[20px] text-black"> {el.name} </p>
           </div>
+          <div className="flex justify-evenly items-center gap-[10px]">
+            <RenameBtn />
 
+          </div>
          
         
         </div>
