@@ -15,14 +15,18 @@ interface ContextType {
     setAddInputValue: (value: string) => void;
     checkedNotes: number[];
     setCheckedNotes: (value: number[]) => void;
+    NotesType: boolean | null;
+    setNotesType: (value: boolean | null) => void;
+
     newNotesInputValue: string;
     setNewNotesInputValue: (value: string) => void;
     changeableNoteId: number | null;
     setChangeableNoteId: (value: number | null) => void;
     searchInputValue: string;
     setSearchInputValue: (value: string) => void;
-    filteredData:  DataType[];
-    setFilteredData: (value:  DataType[]) => void;
+    filteredData: DataType[];
+    setFilteredData: (value: DataType[]) => void;
+
 }
 
 export const FilterContext = createContext<ContextType | undefined>(undefined);
@@ -35,6 +39,7 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const [activeModal, setActiveModal] = useState<boolean>(false);
 
     const [checkedNotes, setCheckedNotes] = useState<number[]>([])
+    const [NotesType, setNotesType] = useState<boolean | null>(null)
 
     const [newNotesInputValue, setNewNotesInputValue] = useState<string>('')
     const [changeableNoteId, setChangeableNoteId] = useState<number | null>(null)
@@ -49,6 +54,8 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             activeModal, setActiveModal,
 
             checkedNotes, setCheckedNotes,
+            NotesType, setNotesType,
+
 
             newNotesInputValue, setNewNotesInputValue,
             changeableNoteId, setChangeableNoteId,

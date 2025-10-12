@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { DataType } from "../../Context"
 import { useFilter } from "../../CustomHook"
 import CheckedBtn from "../Buttons/CheckedBtn";
@@ -5,7 +6,31 @@ import DeleteBtn from "../Buttons/DeleteBtn";
 import RenameBtn from "../Buttons/RenameBtn";
 import Rename from "../Rename/Rename";
 function Todos() {
-  const { filteredData, changeableNoteId, } = useFilter()
+
+  const { data, filteredData, setFilteredData, searchInputValue, changeableNoteId, checkedNotes, NotesType } = useFilter()
+
+
+  useEffect(() => {
+
+    const filtered: DataType[] = data.filter((note: DataType) => {
+      const text = note.name.toLowerCase()
+
+      if (searchInputValue.length > 0 && !text.includes(searchInputValue)) return false
+
+      if (NotesType === false && checkedNotes.includes(note.id)) return false
+
+      if (NotesType === true && !checkedNotes.includes(note.id)) return false
+
+
+      return true
+    })
+
+    setFilteredData(filtered)
+  }, [data, searchInputValue, checkedNotes, NotesType])
+
+
+
+
   return (
     <div className="w-[520px] font-medium  ">
 
@@ -15,16 +40,19 @@ function Todos() {
           key={i}
           className="w-full py-[17px] flex justify-between items-center">
           <div className="flex justify-evenly items-center gap-[17px]  ">
-            <CheckedBtn i={i} />
+            <CheckedBtn i={el.id} />
             {el.id != changeableNoteId || changeableNoteId == null ? (
-              <p className="font-medium text-[20px] w-[420px] border-b-[2px] border-amber-50/0 pb-[5px]"> {el.name} </p>
+              <p className={`font-medium text-[20px] w-[420px] border-b-[2px] border-amber-50/0 pb-[5px] 
+  ${checkedNotes.includes(el.id) ? 'line-through text-gray-500' : 'text-black'}`}>
+                {el.name}
+              </p>
 
             ) : (
               <Rename />
             )}
           </div>
           <div className="flex justify-evenly items-center gap-[10px] text-gray-500 ">
-            <RenameBtn name={el.name} id={el.id}/>
+            <RenameBtn name={el.name} id={el.id} />
             <DeleteBtn id={el.id} />
           </div>
 
