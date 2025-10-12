@@ -14,7 +14,7 @@ function Rename() {
         onChange={(e) => setVal(e)} 
         value={newNotesInputValue} 
         placeholder="Enter new name...." 
-        className="w-[420px] text-[20px] focus:outline-0  border-purple"/> 
+        className="w-[420px] text-[20px] focus:outline-0 border-b-[2px] pb-[5px] border-purple"/> 
     </>
   )
 }

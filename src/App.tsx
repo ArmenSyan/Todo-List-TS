@@ -8,7 +8,7 @@ import { useFilter } from "./CustomHook"
 function App() {
 const {activeModal, data} = useFilter()
   return (
-    <div className="flex flex-col justify-start  items-center w-[750px] h-[100vh]  relative ">
+    <div className="flex flex-col justify-start  items-center w-[750px] h-[100vh]  relative text-black">
         <Header />
         <AddTodoBtn />
         {data.length > 0 ? <Todos /> : <NotFound /> }

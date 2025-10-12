@@ -7,7 +7,7 @@ import Rename from "../Rename/Rename";
 function Todos() {
   const { data, changeableNoteId, } = useFilter()
   return (
-    <div className="w-[520px] text-black font-medium  ">
+    <div className="w-[520px] font-medium  ">
 
       {data.map((el: DataType, i: number) => (
         <div
@@ -17,13 +17,13 @@ function Todos() {
           <div className="flex justify-evenly items-center gap-[17px]  ">
             <CheckedBtn i={i} />
             {el.id != changeableNoteId || changeableNoteId == null ? (
-              <p className="font-medium text-[20px] w-[420px] border-b-[2px] border-amber-50/0"> {el.name} </p>
+              <p className="font-medium text-[20px] w-[420px] border-b-[2px] border-amber-50/0 pb-[5px]"> {el.name} </p>
 
             ) : (
               <Rename />
             )}
           </div>
-          <div className="flex justify-evenly items-center gap-[10px]">
+          <div className="flex justify-evenly items-center gap-[10px] text-gray-500 ">
             <RenameBtn name={el.name} id={el.id}/>
             <DeleteBtn id={el.id} />
           </div>

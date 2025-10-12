@@ -31,7 +31,7 @@ function RenameBtn({ id, name }: { id: number | null, name: string }) {
   return (
     <button
       onClick={() => setRename()}
-      className="text-gray-500 text-[20px] hover:cursor-pointer">{id == changeableNoteId
+      className="text-[20px] hover:cursor-pointer">{id == changeableNoteId
         ? (<FiCheck />)
         : (<PiPencilSimple />)
       }

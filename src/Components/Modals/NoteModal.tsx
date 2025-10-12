@@ -26,7 +26,11 @@ function NoteModal() {
                     <h1 className="text-[24px] font-medium">
                         NEW NOTE
                     </h1>
-                    <input type="text" onChange={(e) => inputValue(e)} placeholder="Input your note..." className="w-[440px] text-gray-500 h-[38px] border-[2px] px-[16px] rounded-[5px]  border-purple  py-[4px] text-[16px] focus:outline-0" />
+                    <input 
+                    type="text" 
+                    onChange={(e) => inputValue(e)} 
+                    placeholder="Input your note..." 
+                    className="w-[440px] h-[38px] border-[2px] px-[16px] rounded-[5px]  border-purple  py-[4px] text-[16px]  font-medium focus:outline-0" />
                 </div>
                 <div className="flex justify-between items-center w-full px-[30px] mb-[18px]">
                     <button onClick={setActive} className="w-[110px] h-[38px] border-[3px] border-purple rounded-[5px] text-purple font-medium text-[18px] hover:cursor-pointer hover:shadow-lg hover:shadow-purple/40 duration-200">CANCEL</button>
