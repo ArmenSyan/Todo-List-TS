@@ -5,11 +5,11 @@ import DeleteBtn from "../Buttons/DeleteBtn";
 import RenameBtn from "../Buttons/RenameBtn";
 import Rename from "../Rename/Rename";
 function Todos() {
-  const { data, changeableNoteId, } = useFilter()
+  const { filteredData, changeableNoteId, } = useFilter()
   return (
     <div className="w-[520px] font-medium  ">
 
-      {data.map((el: DataType, i: number) => (
+      {filteredData.map((el: DataType, i: number) => (
         <div
           style={{ borderTop: i != 0 ? `1px solid #6C63FF` : `none` }}
           key={i}

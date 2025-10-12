@@ -18,13 +18,18 @@ interface ContextType {
     newNotesInputValue: string;
     setNewNotesInputValue: (value: string) => void;
     changeableNoteId: number | null;
-     setChangeableNoteId: (value: number | null) => void;
+    setChangeableNoteId: (value: number | null) => void;
+    searchInputValue: string;
+    setSearchInputValue: (value: string) => void;
+    filteredData:  DataType[];
+    setFilteredData: (value:  DataType[]) => void;
 }
 
 export const FilterContext = createContext<ContextType | undefined>(undefined);
 
 export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [data, setData] = useState<DataType[]>([])
+    const [filteredData, setFilteredData] = useState<DataType[]>([])
 
     const [addInputValue, setAddInputValue] = useState<string>('')
     const [activeModal, setActiveModal] = useState<boolean>(false);
@@ -33,9 +38,12 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     const [newNotesInputValue, setNewNotesInputValue] = useState<string>('')
     const [changeableNoteId, setChangeableNoteId] = useState<number | null>(null)
+
+    const [searchInputValue, setSearchInputValue] = useState<string>('');
     return (
         <FilterContext.Provider value={{
             data, setData,
+            filteredData, setFilteredData,
 
             addInputValue, setAddInputValue,
             activeModal, setActiveModal,
@@ -44,6 +52,7 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
             newNotesInputValue, setNewNotesInputValue,
             changeableNoteId, setChangeableNoteId,
+            searchInputValue, setSearchInputValue,
         }} >
             {children}
         </FilterContext.Provider>
