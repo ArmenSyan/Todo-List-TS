@@ -34,7 +34,7 @@ function NoteModal() {
                 </div>
                 <div className="flex justify-between items-center w-full px-[30px] mb-[18px]">
                     <button onClick={setActive} className="w-[110px] h-[38px] border-[3px] border-purple rounded-[5px] text-purple font-medium text-[18px] hover:cursor-pointer hover:shadow-lg hover:shadow-purple/40 duration-200">CANCEL</button>
-                    <button onClick={addNote} className="w-[110px] h-[38px] border-[3px] border-purple rounded-[5px] text-white bg-purple font-medium text-[18px]">APPLY</button>
+                    <button onClick={addNote} className="w-[110px] h-[38px] border-[3px] border-purple rounded-[5px] text-white bg-purple font-medium text-[18px] hover:cursor-pointer hover:shadow-lg hover:shadow-purple/40 duration-300">APPLY</button>
                 </div>
             </div>
 

@@ -14,7 +14,7 @@ function DeleteBtn({id} : {id : number}) {
   return (
     <button 
     onClick={() => deleteNote(id)}
-    className="text-[18px] hover:cursor-pointer"
+    className="text-[18px] hover:cursor-pointer hover:text-[#E50000] duration-200"
     ><LuTrash2 /> </button>
   )
 }
