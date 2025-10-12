@@ -42,7 +42,7 @@ function Dropdown() {
     <div className="relative w-[140px]">
       <button
         onClick={button}
-        className="w-full h-[38px] rounded-[5px] flex justify-between items-center cursor-pointer text-[18px] px-[10px] text-white bg-purple font-medium duration-300 transition-all"
+        className="w-full h-[38px] rounded-[5px] flex justify-between items-center cursor-pointer text-[18px] px-[10px] text-white bg-purple hover:bg-ph font-medium duration-300 transition-all"
       >
         {dropDownElems[index].name} {!open ? <IoIosArrowDown /> : <IoIosArrowUp />}
       </button>

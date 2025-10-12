@@ -21,7 +21,7 @@ function App() {
   }, [data, searchInputValue])
 
   return (
-    <div className={`w-[100vw] h-[100vh] flex flex-col justify-start   items-center ${darkMode ? 'text-white bg-black' : 'text-black bg-white'}`}>
+    <div className={`w-[100vw] h-[100vh] flex flex-col justify-start   items-center ${darkMode ? 'text-white bg-black' : 'text-black bg-white'} duration-300`}>
 
       <div className="flex flex-col justify-start   items-center w-[750px] h-[100vh]  relative  ">
         <Header />

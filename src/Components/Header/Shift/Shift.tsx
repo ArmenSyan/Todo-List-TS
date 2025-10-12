@@ -10,7 +10,7 @@ function Shift() {
     else setDarkMode(true)
   }
   return (
-    <div onClick={setShift} className="w-[38px] h-[38px] bg-purple rounded-[5px] flex justify-evenly items-center text-white text-[24px] hover:cursor-pointer">
+    <div onClick={setShift} className="w-[38px] h-[38px] bg-purple rounded-[5px] flex justify-evenly items-center text-white text-[24px] hover:cursor-pointer hover:bg-ph">
       {darkMode ?
       (<HiOutlineSun />) :
       (<FiMoon />)
