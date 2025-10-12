@@ -46,7 +46,7 @@ useEffect(() => {
               <p
                 className={`font-medium text-[20px] w-[420px] border-b-[2px] border-amber-50/0 pb-[5px] ${checkedNotes.includes(el.id)
                     ? "line-through text-gray-500"
-                    : "text-black"
+                    : ""
                   }`}
               >
                 {el.name}
@@ -55,7 +55,7 @@ useEffect(() => {
               <Rename />
             )}
           </div>
-          <div className="flex justify-evenly items-center gap-[10px] text-gray-500">
+          <div className="flex justify-evenly items-center gap-[10px] text-[#CDCDCD]">
             <RenameBtn name={el.name} id={el.id} />
             <DeleteBtn id={el.id} />
           </div>
