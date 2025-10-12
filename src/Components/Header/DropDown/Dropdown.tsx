@@ -48,7 +48,7 @@ function Dropdown() {
       </button>
 
       {open && (
-        <div className="absolute mt-2 w-full bg-[white] text-purple border rounded-[5px] py-[5px] duration-300">
+        <div className="absolute mt-2 w-full bg-white text-purple border rounded-[5px] py-[5px] duration-300">
           <ul className="flex flex-col text-center font-medium">
             {dropDownElems.map((el, i) => (
               <li
