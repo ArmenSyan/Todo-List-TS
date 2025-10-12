@@ -13,8 +13,7 @@ function CheckedBtn({ i }: { i: number }) {
     return (
         <button
             onClick={() => setBtns(i)}
-            style={{ backgroundColor: checkedNotes.includes(i) ? '#6C63FF' : '#F7F7F7', }}
-            className="w-[26px] h-[26px] rounded-[2px] border-purple border-[1px] flex justify-evenly items-center text-[20px] text-white duration-200">
+            className={`w-[26px] h-[26px] rounded-[2px] border-purple border-[1px] flex justify-evenly items-center text-[20px] text-white duration-200 ${checkedNotes.includes(i) ? 'bg-purple' : 'bg-white'}`}>
             <IoMdCheckmark />
         </button>
     )

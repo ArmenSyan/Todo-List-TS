@@ -30,16 +30,15 @@ useEffect(() => {
   });
 
   setFilteredData([...filtered]);
-}, [data, searchInputValue, checkedNotes]); // 👈 NotesType убрали
+}, [data, searchInputValue, checkedNotes]); 
 
 
   return (
     <div className="w-[520px] font-medium">
       {filteredData.map((el: DataType, i: number) => (
         <div
-          style={{ borderTop: i != 0 ? `1px solid #6C63FF` : `none` }}
           key={el.id}
-          className="w-full py-[17px] flex justify-between items-center"
+          className={`w-full py-[17px] flex justify-between items-center ${i != 0 ? ' border-t-purple border-t-[1px]' : ''}`}
         >
           <div className="flex justify-evenly items-center gap-[17px]">
             <CheckedBtn i={el.id} />
