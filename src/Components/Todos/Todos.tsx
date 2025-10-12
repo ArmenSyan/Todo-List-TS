@@ -1,66 +1,69 @@
 import { useEffect } from "react";
-import { DataType } from "../../Context"
-import { useFilter } from "../../CustomHook"
+import { DataType } from "../../Context";
+import { useFilter } from "../../CustomHook";
 import CheckedBtn from "../Buttons/CheckedBtn";
 import DeleteBtn from "../Buttons/DeleteBtn";
 import RenameBtn from "../Buttons/RenameBtn";
 import Rename from "../Rename/Rename";
+
 function Todos() {
+  const {
+    data,
+    filteredData,
+    setFilteredData,
+    searchInputValue,
+    changeableNoteId,
+    checkedNotes,
+    notesType,
+  } = useFilter();
 
-  const { data, filteredData, setFilteredData, searchInputValue, changeableNoteId, checkedNotes, NotesType } = useFilter()
+useEffect(() => {
+  const filtered: DataType[] = data.filter((note: DataType) => {
+    const text = note.name.toLowerCase();
+    if (searchInputValue.length > 0 && !text.includes(searchInputValue))
+      return false;
 
+    if (notesType === false && checkedNotes.includes(note.id)) return false;
+    if (notesType === true && !checkedNotes.includes(note.id)) return false;
 
-  useEffect(() => {
+    return true;
+  });
 
-    const filtered: DataType[] = data.filter((note: DataType) => {
-      const text = note.name.toLowerCase()
-
-      if (searchInputValue.length > 0 && !text.includes(searchInputValue)) return false
-
-      if (NotesType === false && checkedNotes.includes(note.id)) return false
-
-      if (NotesType === true && !checkedNotes.includes(note.id)) return false
-
-
-      return true
-    })
-
-    setFilteredData(filtered)
-  }, [data, searchInputValue, checkedNotes, NotesType])
-
-
+  setFilteredData([...filtered]);
+}, [data, searchInputValue, checkedNotes]); // 👈 NotesType убрали
 
 
   return (
-    <div className="w-[520px] font-medium  ">
-
+    <div className="w-[520px] font-medium">
       {filteredData.map((el: DataType, i: number) => (
         <div
           style={{ borderTop: i != 0 ? `1px solid #6C63FF` : `none` }}
-          key={i}
-          className="w-full py-[17px] flex justify-between items-center">
-          <div className="flex justify-evenly items-center gap-[17px]  ">
+          key={el.id}
+          className="w-full py-[17px] flex justify-between items-center"
+        >
+          <div className="flex justify-evenly items-center gap-[17px]">
             <CheckedBtn i={el.id} />
             {el.id != changeableNoteId || changeableNoteId == null ? (
-              <p className={`font-medium text-[20px] w-[420px] border-b-[2px] border-amber-50/0 pb-[5px] 
-  ${checkedNotes.includes(el.id) ? 'line-through text-gray-500' : 'text-black'}`}>
+              <p
+                className={`font-medium text-[20px] w-[420px] border-b-[2px] border-amber-50/0 pb-[5px] ${checkedNotes.includes(el.id)
+                    ? "line-through text-gray-500"
+                    : "text-black"
+                  }`}
+              >
                 {el.name}
               </p>
-
             ) : (
               <Rename />
             )}
           </div>
-          <div className="flex justify-evenly items-center gap-[10px] text-gray-500 ">
+          <div className="flex justify-evenly items-center gap-[10px] text-gray-500">
             <RenameBtn name={el.name} id={el.id} />
             <DeleteBtn id={el.id} />
           </div>
-
-
         </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default Todos
+export default Todos;
