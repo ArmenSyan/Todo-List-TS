@@ -27,6 +27,9 @@ interface ContextType {
     filteredData: DataType[];
     setFilteredData: (value: DataType[]) => void;
 
+    darkMode:boolean ;
+    setDarkMode:(value: boolean) => void ;
+
 }
 
 export const FilterContext = createContext<ContextType | undefined>(undefined);
@@ -45,6 +48,8 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const [changeableNoteId, setChangeableNoteId] = useState<number | null>(null)
 
     const [searchInputValue, setSearchInputValue] = useState<string>('');
+
+    const [darkMode, setDarkMode] = useState<boolean>(false)
     return (
         <FilterContext.Provider value={{
             data, setData,
@@ -60,6 +65,9 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             newNotesInputValue, setNewNotesInputValue,
             changeableNoteId, setChangeableNoteId,
             searchInputValue, setSearchInputValue,
+
+
+            darkMode, setDarkMode,
         }} >
             {children}
         </FilterContext.Provider>
