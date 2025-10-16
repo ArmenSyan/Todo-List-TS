@@ -13,7 +13,7 @@ function Search() {
       <input
         type="text"
         placeholder="Search note..."
-        className={`w-[522px] h-[38px] border-[2px] px-[16px] rounded-[5px] rounded-r-[0px] border-r-0 ${darkMode ? 'border-white' : 'border-purple'} py-[4px] text-[16px] focus:outline-0`}
+        className={`md:w-[300px] lg:w-[522px] h-[38px] border-[2px] px-[16px] rounded-[5px] rounded-r-[0px] border-r-0 ${darkMode ? 'border-white' : 'border-purple'} py-[4px] md:text-[15px] lg:text-[16px] focus:outline-0`}
         onChange={(e) => setVal(e)}
       />
       <button className={`w-[40px] h-[38px] py-[4px] text-[22px] hover:cursor-pointer border-[2px] border-l-0 ${darkMode ? 'border-white text-white' : "border-purple text-purple"} rounded-[5px] rounded-l-[0px] `}>
