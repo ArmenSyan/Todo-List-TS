@@ -8,7 +8,7 @@ function AddTodoBtn() {
   
   }
   return (
-    <button onClick={setActive} className="w-[50px] h-[50px] hover:w-[55px] hover:h-[55px] rounded-[50px] bg-purple hover:bg-ph text-[48px] hover:text-[58px] shadow-lg shadow-purple/40 duration-200 right-[8px] hover:right-[6px] bottom-[32px] hover:bottom-[30px] hover:cursor-pointer text-white absolute flex justify-evenly items-center ">
+    <button onClick={setActive} className="w-[40px] h-[40px] rounded-[20px] md:w-[50px] md:h-[50px] md:rounded-[50px] bg-purple hover:bg-ph text-[35px] md:text-[48px] shadow-lg shadow-purple/40 duration-200 right-[10vw] bottom-[5vh] md:right-[8px] md:bottom-[32px] hover:cursor-pointer text-white absolute flex justify-evenly items-center ">
       <IoIosAdd />
     </button>
   )
