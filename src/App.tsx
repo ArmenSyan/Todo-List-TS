@@ -23,7 +23,7 @@ function App() {
   return (
     <div className={`w-[100vw] h-[100vh] flex flex-col justify-start   items-center ${darkMode ? 'text-white bg-black' : 'text-black bg-white'} duration-300 cursor-custom`}>
 
-      <div className="flex flex-col justify-start   items-center md:w-[600px] lg:w-[750px] h-[100vh]  relative  ">
+      <div className="flex flex-col justify-start   items-center w-full  md:w-[600px] lg:w-[750px] h-[100vh]  relative  ">
         <Header />
         <AddTodoBtn />
         {filteredData.length > 0 ? <Todos /> : <NotFound />}

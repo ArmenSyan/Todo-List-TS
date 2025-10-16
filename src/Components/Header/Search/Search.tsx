@@ -9,14 +9,14 @@ function Search() {
   }
 
   return (
-    <div className="flex justify-items-center">
+    <div className="flex justify-items-center ml-[10px]">
       <input
         type="text"
         placeholder="Search note..."
-        className={`md:w-[300px] lg:w-[522px] h-[38px] border-[2px] px-[16px] rounded-[5px] rounded-r-[0px] border-r-0 ${darkMode ? 'border-white' : 'border-purple'} py-[4px] md:text-[15px] lg:text-[16px] focus:outline-0`}
+        className={`w-[50vw] max-w-[270px] md:max-w-none md:w-[300px] lg:w-[522px] h-[38px] border-[2px] px-[16px] rounded-[5px] rounded-r-[0px] border-r-0 ${darkMode ? 'border-white' : 'border-purple'} py-[4px] text-[14px] md:text-[15px] lg:text-[16px] focus:outline-0`}
         onChange={(e) => setVal(e)}
       />
-      <button className={`w-[40px] h-[38px] py-[4px] text-[22px] hover:cursor-pointer border-[2px] border-l-0 ${darkMode ? 'border-white text-white' : "border-purple text-purple"} rounded-[5px] rounded-l-[0px] `}>
+      <button className={`w-[40px] h-[38px] py-[4px] text-[20px] md:text-[22px] hover:cursor-pointer border-[2px] border-l-0 ${darkMode ? 'border-white text-white' : "border-purple text-purple"} rounded-[5px] rounded-l-[0px] `}>
         <IoSearchOutline />
       </button>
     </div>
