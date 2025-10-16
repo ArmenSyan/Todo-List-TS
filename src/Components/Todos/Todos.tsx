@@ -34,17 +34,17 @@ useEffect(() => {
 
 
   return (
-    <div className="w-[520px] font-medium">
+    <div className="w-[400px] md:max-w-none md:w-[520px] font-medium">
       {filteredData.map((el: DataType, i: number) => (
         <div
           key={el.id}
-          className={`w-full py-[17px] flex justify-between items-center ${i != 0 ? ' border-t-purple border-t-[1px]' : ''}`}
+          className={` w-full py-[10px] md:py-[17px] flex justify-between items-center ${i != 0 ? ' border-t-purple border-t-[1px]' : ''}`}
         >
           <div className="flex justify-evenly items-center gap-[17px]">
             <CheckedBtn i={el.id} />
             {el.id != changeableNoteId || changeableNoteId == null ? (
               <p
-                className={`font-medium text-[20px] w-[420px] border-b-[2px] border-amber-50/0 pb-[5px] ${checkedNotes.includes(el.id)
+                className={`font-medium text-[16px] md:text-[20px] w-[50vw] max-w-[200px] md:max-w-none md:w-[420px] border-b-[2px] border-amber-50/0  ${checkedNotes.includes(el.id)
                     ? "line-through text-gray-500"
                     : ""
                   }`}
