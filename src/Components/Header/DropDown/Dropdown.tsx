@@ -39,10 +39,10 @@ function Dropdown() {
   }
 
   return (
-    <div className="relative w-[90px] md:w-[130px] lg:w-[140px]">
+    <div className="relative w-[100px] md:w-[130px] lg:w-[140px]">
       <button
         onClick={button}
-        className="w-full h-[38px] rounded-[5px] flex justify-between items-center cursor-pointer text-[13px] md:text-[17px] lg:text-[18px] px-[10px] text-white bg-purple hover:bg-ph font-medium duration-300 transition-all"
+        className="w-full h-[38px] rounded-[5px] flex justify-between items-center cursor-pointer text-[12px] md:text-[17px] lg:text-[18px] px-[10px] text-white bg-purple hover:bg-ph font-medium duration-300 transition-all"
       >
         {dropDownElems[index].name} {!open ? <IoIosArrowDown /> : <IoIosArrowUp />}
       </button>
